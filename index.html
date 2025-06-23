@@ -102,7 +102,13 @@
             {id: 'CV-03', name: 'Safi Star', type: 'Cargo Ship', lat: 30.36, lng: -9.70},
         ];
         const mockStats = { totalAlertsToday: mockAlerts.length, averageResponseTime: 21 };
-        const mockWeather = { windSpeed: 15, windDirection: 'NW', waveHeight: 1.2, horizontalVisibility: 10, cloudBase: 3000 };
+        const mockWeather = { 
+          windSpeed: 15, 
+          windDirection: 'NW', 
+          waveHeight: 1.2, 
+          horizontalVisibility: 10,
+          cloudBase: 3000
+        };
 
         const haversineDistance = (coords1, coords2) => {
           const toRad = (x) => (x * Math.PI) / 180;
@@ -270,7 +276,7 @@
             layersRef.current.unitPath.clearLayers();
             document.querySelectorAll('.station-highlight').forEach(el => el.classList.remove('station-highlight'));
             if (selectedAlert) {
-                const pointsToFit = [[selectedAlert.lat, selectedAlert.lng]];
+                let pointsToFit = [[selectedAlert.lat, selectedAlert.lng]];
                 if (selectedAlert.type === 'active') {
                     const operationsCenter = [MRSC_AGADIR_LOCATION.lat, MRSC_AGADIR_LOCATION.lng];
                     const alertLocation = [selectedAlert.lat, selectedAlert.lng];
@@ -465,3 +471,4 @@
     </script>
 </body>
 </html>
+
