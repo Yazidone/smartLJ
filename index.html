@@ -284,9 +284,11 @@
                     const portTower = coastalStations.find(s => s.id === 'CS_AG_01');
                     const stationLocation = [portTower.lat, portTower.lng];
                     pointsToFit.push(operationsCenter, satelliteLocation, stationLocation);
+                    
                     const line = window.L.polyline([alertLocation, satelliteLocation, stationLocation, operationsCenter], { color: '#DC2626', weight: 2, opacity: 0.7, dashArray: '8, 8' });
                     layersRef.current.selection.addLayer(line);
                 }
+                
                 if (selectedUnit) {
                     const unitLocation = [selectedUnit.lat, selectedUnit.lng];
                     pointsToFit.push(unitLocation);
@@ -341,9 +343,9 @@
           const handleDispatchSuccess = useCallback((unit, alert) => { if(!unit || !alert) return; showNotification(`Dispatched ${unit.name} to ${alert.id}`, 'success'); setDispatchDialogOpen(false); setIsActionPlanOpen(false); }, []);
 
           const handleGenerateActionPlan = async () => { 
-              const apiKey = "AIzaSyD6rLCTRA2LIzFjjzydGrzdS8wOJgelk9Q"; 
+              const apiKey = "YOUR_API_KEY_HERE"; 
               if (!selectedAlert) return; 
-              if (!apiKey || apiKey === "AIzaSyD6rLCTRA2LIzFjjzydGrzdS8wOJgelk9Q") {
+              if (!apiKey || apiKey === "YOUR_API_KEY_HERE") {
                   showNotification('Please add your Gemini API Key in the code.', 'error');
                   return;
               }
@@ -471,4 +473,3 @@
     </script>
 </body>
 </html>
-
