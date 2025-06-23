@@ -335,9 +335,9 @@
           const handleDispatchSuccess = useCallback((unit, alert) => { if(!unit || !alert) return; showNotification(`Dispatched ${unit.name} to ${alert.id}`, 'success'); setDispatchDialogOpen(false); setIsActionPlanOpen(false); }, []);
 
           const handleGenerateActionPlan = async () => { 
-              const apiKey = "YOUR_API_KEY_HERE"; 
+              const apiKey = "AIzaSyD6rLCTRA2LIzFjjzydGrzdS8wOJgelk9Q"; 
               if (!selectedAlert) return; 
-              if (!apiKey || apiKey === "YOUR_API_KEY_HERE") {
+              if (!apiKey || apiKey === "AIzaSyD6rLCTRA2LIzFjjzydGrzdS8wOJgelk9Q") {
                   showNotification('Please add your Gemini API Key in the code.', 'error');
                   return;
               }
@@ -365,8 +365,8 @@
               } 
           };
           const handleGenerateSummary = async () => { 
-              const apiKey = "YOUR_API_KEY_HERE";
-              if (!apiKey || apiKey === "YOUR_API_KEY_HERE") {
+              const apiKey = "AIzaSyD6rLCTRA2LIzFjjzydGrzdS8wOJgelk9Q";
+              if (!apiKey || apiKey === "AIzaSyD6rLCTRA2LIzFjjzydGrzdS8wOJgelk9Q") {
                   showNotification('Please add your Gemini API Key in the code.', 'error');
                   return;
               }
